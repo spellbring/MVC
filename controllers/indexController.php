@@ -5,8 +5,7 @@ class indexController extends Controller{
     }
     public function index() 
     {
-        $this->_view->titulo = 'Portada';
-        $this->_view->renderizar('index');
+       header('Location: ' . BASE_URL . 'login');
     }
 
 }

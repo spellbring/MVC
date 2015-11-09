@@ -1,0 +1,66 @@
+<html>
+    <head>
+        <title><?php echo $this->titulo; ?></title>
+        <meta http-equiv="Content-Type" content="text/html" charset="utf8">
+        <link href="<?php echo $_layoutParams['ruta_css']; ?>bootstrap-theme.css" rel="stylesheet" type="text/css">
+        <link href="<?php echo $_layoutParams['ruta_css']; ?>bootstrap-theme.min.css" rel="stylesheet" type="text/css">
+        <link href="<?php echo $_layoutParams['ruta_css']; ?>bootstrap.css" rel="stylesheet" type="text/css">
+        <link href="<?php echo $_layoutParams['ruta_css']; ?>bootstrap.min.css" rel="stylesheet" type="text/css">
+    </head>
+    <body>
+        <div class="container">
+            <div class="page-header">
+                <h3>Bienvenidos</h3>
+            </div>
+            <div class="row">
+            <div class="col-md-6">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h3 class="text-center">JaqueMate</h3>
+                        <small><h5 class="text-center">Administrador de Proyectos Scrum</h5></small>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="row">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <p>Login de Usuario</p>
+                        </div>
+                        <div class="panel-body">
+                            <form action="<?php echo BASE_URL . 'login/ingresar' ?>">
+                            <div class="col-md-8">
+                                <div class="form-group">
+                                    <label>Usuario</label>
+                                    <input type="text" id="txtLogin" class="form-control">    
+                                </div>
+                            </div>
+                            <div class="col-md-8">
+                                <div class="form-group">
+                                    <label>Contraseña</label>
+                                    <input type="password" id="txtContraseña" class="form-control">   
+                                </div>
+                            </div>
+                           
+                            <div class="col-md-8">      
+                                <input type="submit" id="botonEnviar" class="btn btn-primary" value="Ingresar">
+                            </div>
+                            </form>
+                        </div>
+                        <div class="panel-footer">
+                            <p><?php echo Session::get('sess_mensaje'); ?></p>
+                            <p>Si no tiene cuenta, reg&iacute;strese <a href="#" >Aqui</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </body>
+    <script type="text/javascript" src="<?php echo $_layoutParams['ruta_js']; ?>jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="<?php echo $_layoutParams['ruta_js']; ?>bootstrap.js"></script>
+    <script type="text/javascript" src="<?php echo $_layoutParams['ruta_js']; ?>bootstrap.min.js"></script>
+
+    <script type="text/javascript" src="<?php echo $_layoutParams['ruta_js']; ?>npm.js"></script>
+
+</html>
