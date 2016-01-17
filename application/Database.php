@@ -19,13 +19,18 @@ class Database
         }
     }
     public function consulta($query) {
+        try{
         //echo var_dump($this->_conexion);
         $rs = $this->_conexion->query($query);
         //$this->_conexion->free();
-        if ($rs) {
+       
             return $rs;
-        } else {
-            return false;
+        
+        }
+        catch(Exception $e){
+            
+           return $e->getMessage(); 
+            
         }
     }
     

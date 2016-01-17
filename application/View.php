@@ -18,7 +18,8 @@ class View
         $_layoutParams = array(
             'ruta_css' => BASE_URL . 'views/layout/'.DEFAULT_LAYOUT.'/css/',
             'ruta_img' => BASE_URL . 'views/layout/'.DEFAULT_LAYOUT.'/img/',
-            'ruta_js' => BASE_URL . 'views/layout/'.DEFAULT_LAYOUT.'/js/'
+            'ruta_js' => BASE_URL . 'views/layout/'.DEFAULT_LAYOUT.'/js/',
+            'ruta_public_js' =>BASE_URL .'public/js/'
         );
         
         $rutaView = ROOT . 'views' . DS . $this->_controlador . DS . $vista . '.phtml';
@@ -37,7 +38,8 @@ class View
         $_layoutParams = array(
             'ruta_css' => BASE_URL . 'views/layout/'.DEFAULT_LAYOUT.'/css/',
             'ruta_img' => BASE_URL . 'views/layout/'.DEFAULT_LAYOUT.'/img/',
-            'ruta_js' => BASE_URL . 'views/layout/'.DEFAULT_LAYOUT.'/js/'
+            'ruta_js' => BASE_URL . 'views/layout/'.DEFAULT_LAYOUT.'/js/',
+            'ruta_public_js' =>BASE_URL .'public/js/'
         );
         
         $rutaView = ROOT . 'views' . DS . $this->_controlador . DS . $vista . '.phtml';
@@ -48,6 +50,26 @@ class View
         }
         else{
             throw new Exception('Error de vista');
+        }
+    }
+    
+    public function renderizaCenterBox($vista, $item=false)
+    {
+        $_layoutParams = array(
+            'ruta_public_js' =>BASE_URL .'public/js/',
+            'ruta_css' => BASE_URL . 'views/layout/' . DEFAULT_LAYOUT . '/css/', 
+            'ruta_img' => BASE_URL . 'views/layout/' . DEFAULT_LAYOUT . '/img/', 
+            'ruta_js' => BASE_URL . 'views/layout/' . DEFAULT_LAYOUT . '/js/',
+            
+        );
+        $rutaView= ROOT . 'views' . DS . $this->_controlador . DS . 'centerBox' . DS . $vista . '.phtml';
+        if(is_readable($rutaView))
+        {
+            include_once $rutaView;
+        }
+        else
+        {
+            throw new Exception('Error de vista AJAX');
         }
     }
 }

@@ -120,5 +120,12 @@ abstract class Controller
             return $_SERVER[$clave];
         }
     }
+    public function getCorreo($correo){
+        if (filter_var($correo, FILTER_VALIDATE_EMAIL)) {
+            return true;
+        }
+       
+        
+    }
 }
 

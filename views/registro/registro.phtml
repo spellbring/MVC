@@ -3,8 +3,8 @@
         <title><?php echo $this->titulo; ?></title>
         <meta http-equiv="Content-Type" content="text/html" charset="utf8">
         <link href="<?php echo $_layoutParams['ruta_css']; ?>bootstrap-theme.css" rel="stylesheet" type="text/css">
-        <link href="<?php echo $_layoutParams['ruta_css']; ?>bootstrap-theme.min.css" rel="stylesheet" type="text/css">
-        <link href="<?php echo $_layoutParams['ruta_css']; ?>bootstrap.css" rel="stylesheet" type="text/css">
+<!--        <link href="<?php echo $_layoutParams['ruta_css']; ?>bootstrap-theme.min.css" rel="stylesheet" type="text/css">-->
+<!--        <link href="<?php echo $_layoutParams['ruta_css']; ?>bootstrap.css" rel="stylesheet" type="text/css">-->
         <link href="<?php echo $_layoutParams['ruta_css']; ?>bootstrap.min.css" rel="stylesheet" type="text/css">
         <link href="<?php echo $_layoutParams['ruta_css']; ?>jquery-ui.min.css" rel="stylesheet" type="text/css">
         <link href="<?php echo $_layoutParams['ruta_css']; ?>jquery-ui.structure.min.css" rel="stylesheet" type="text/css">
@@ -58,32 +58,18 @@
     </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
         <div class="container">
-            
             <div class="page-header">
-                <h3>Bienvenidos</h3>
+                <h3>Registro de Usuario</h3>
             </div>
-            <div class="row">
+            <div class="row">    
                 <div class="col-md-6">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <h2 class="text-center">SoftLeaf</h2>
-                            <small><h5 class="text-center">Administración de Proyectos Ágiles</h5></small>
-                            <br>
-                           
-                                
-                            </div>
-                            
-                    </div>
-                </div>
-                <div class="col-md-6">
-
                     <div class="row">
                         <div class="panel panel-primary">
                             <div class="panel-heading">
-                                <p>Login de Usuario</p>
+                                <p>Registro</p>
                             </div>
                             <div class="panel-body">
-                                <form class="formlogin" id="formlogin" method="post" action="<?php echo BASE_URL?>login/ingresar">
+                                <form class="formRegistro" id="formRegistro" method="post">
                                     <div class="col-md-8">
                                         <div class="form-group">
                                             <label>Usuario</label>
@@ -96,40 +82,67 @@
                                             <input type="password" id="txtContraseña" name="txtContraseña" class="form-control">   
                                         </div>
                                     </div>
-
-                                    <div class="col-md-8">  
-                                        <input type="submit" class="btn btn-primary" value="Entrar" >
-<!--                                         <input type="button" id="botonEnviar" class="btn btn-primary" value="Enviar"
-                                               onclick="Login.prototype.procesoEnviaForm('formlogin', '<?php echo BASE_URL ?>login/ingresar', 'botonEnviar', '')"
-                                               >-->
-                                        <div class="alert">
-                                            <p><?php echo Session::get('SESS_ERRLOGIN'); ?></p>
+                                    <div class="col-md-8">
+                                        <div class="form-group">
+                                            <label>Confirmar Contraseña</label>
+                                            <input type="password" id="txtContraseñaConf" name="txtContraseñaConf" class="form-control">   
                                         </div>
+                                    </div>
+                                 
+                                    <div class="col-md-8">
+                                        <div class="form-group">
+                                            <label>E-mail</label>
+                                            <input type="text" id="txtEmail" name="txtEmail" class="form-control">   
+                                        </div>
+                                    </div>
+                                      <div class="col-md-8">
+                                        <div class="form-group">
+                                            <label>Nombre</label>
+                                            <input type="text" id="txt_Nombre" name="txt_Nombre" class="form-control">   
+                                        </div>
+                                    </div>
+                                      <div class="col-md-8">
+                                        <div class="form-group">
+                                            <label>Apellido</label>
+                                            <input type="text" id="txt_Apellido" name="txt_Apellido" class="form-control">   
+                                        </div>
+                                    </div>
+
+
+                                    <div class="col-md-8">      
+                                        <button type="button" id="botonEnviar" class="btn btn-primary"
+                                               onclick="Registro.prototype.procesoEnviaForm('formRegistro', '<?php echo BASE_URL ?>registro/guardarUsuario', 'btnEnviar', '<?php echo BASE_URL ?>login')"
+                                               data-target="#myModal" data-toggle="modal"> Enviar</button>
+                                      
                                     </div>
                                 </form>
                             </div>
                             <div class="panel-footer">
-                                <p><?php echo Session::get('sess_mensaje'); ?></p>
-                                <p>Si no tiene cuenta, reg&iacute;strese <a href="<?php echo BASE_URL ?>registro" >Aqui</a></p>
+
+
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="navbar-bottom navbar-fixed-bottom" style="background-color: #07a; color:#fff">
+
+   <div class="navbar-bottom navbar-fixed-bottom" style="background-color: #07a; color:#fff">
            
                 <p class="text-center">Fresno, Derechos reservados</p>  
                
             
         </div>
-
     </body>
     <script type="text/javascript" src="<?php echo $_layoutParams['ruta_js']; ?>jquery-2.1.4.min.js"></script>
-    <script type="text/javascript" src="<?php echo $_layoutParams['ruta_js']; ?>bootstrap.js"></script>
-<!--    <script type="text/javascript" src="<?php echo $_layoutParams['ruta_js']; ?>bootstrap.min.js"></script>-->
+<!--    <script type="text/javascript" src="<?php echo $_layoutParams['ruta_js']; ?>bootstrap.js"></script>-->
+    <script type="text/javascript" src="<?php echo $_layoutParams['ruta_js']; ?>bootstrap.min.js"></script>
     <script type="text/javascript" src="<?php echo $_layoutParams['ruta_js']; ?>Funciones.js"></script>
-    <script type="text/javascript" src="<?php echo $_layoutParams['ruta_public_js']; ?>Login.js"></script>
-    <script type="text/javascript" src="<?php echo $_layoutParams['ruta_js']; ?>jquery-ui.js"></script>
+     <script type="text/javascript" src="<?php echo $_layoutParams['ruta_js']; ?>jquery-ui.js"></script>
+    <script type="text/javascript" src="<?php echo $_layoutParams['ruta_public_js']; ?>Registro.js"></script>
+   
+    <!--<script type="text/javascript" src="<?php echo $_layoutParams['ruta_js']; ?>pnotify.custom.min.js"></script>-->
+  
+    
 
 </html>
